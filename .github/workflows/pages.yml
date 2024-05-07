@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - crates/ubongo-extreme-solver-web/**
+      - .github/workflows/pages.yml
   workflow_dispatch:
 
 permissions:
