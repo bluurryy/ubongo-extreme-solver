@@ -1,12 +1,9 @@
 name: GitHub Pages
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - crates/ubongo-extreme-solver-web/**
-      - .github/workflows/pages.yml
+  release:
+    types:
+      - released
   workflow_dispatch:
 
 permissions:
