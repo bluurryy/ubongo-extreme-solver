@@ -1,0 +1,172 @@
+html, body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background: #1e1e1e;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent !important;
+  box-sizing: border-box;
+}
+
+#ui {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #eee;
+  font: 12px sans-serif;
+  text-shadow: 0 -1px 0 #111;
+}
+#ui ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+#ui li {
+  min-height: 27px;
+  line-height: 27px;
+  padding: 0 4px 0 5px;
+  background: #252526;
+  border-bottom: 1px solid #474747;
+  border-right: 3px solid #2fa1d6;
+  clear: both;
+  overflow: hidden;
+}
+#ui input {
+  width: 150px;
+}
+#ui .label {
+  overflow: visible;
+  cursor: default;
+  float: left;
+  clear: left;
+  width: 100px;
+  user-select: none;
+}
+#ui .value {
+  float: left;
+  position: relative;
+  min-height: 27px;
+}
+#ui .hidden {
+  display: none;
+}
+#ui .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 27px;
+}
+#ui .row > * {
+  margin-right: 4px;
+}
+#ui .close-row {
+  display: flex;
+  justify-content: center;
+  min-height: 22px;
+  height: 22px;
+  align-items: center;
+  color: #b7b7b7;
+  font: 11px sans-serif;
+  user-select: none;
+}
+#ui .close-row:hover {
+  background: #333;
+  cursor: pointer;
+}
+
+#grid {
+  display: flex;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  flex-direction: column;
+}
+#grid svg {
+  flex: 1;
+  display: flex;
+}
+
+#grid-boards {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+#grid-boards div {
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+  flex: 1;
+}
+
+#grid-pieces {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+#grid-pieces div {
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+  flex: 1;
+}
+
+#hexagon {
+  stroke: black;
+  stroke-width: 0.05;
+}
+
+#templates {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+#version {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  color: #666666;
+  font: 12px sans-serif;
+  text-shadow: 0 -1px 0 #111;
+}
+
+.resize-listener {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.hidden {
+  display: none !important;
+}
