@@ -517,7 +517,7 @@ pub fn App() -> View {
                             disabled=!player.with(|s| s.is_running()).get() || is_done.get(),
                             on:click=pause,
                         ) { "Pause" }
-                        button(on:click=move |_| game.update(|_| ())) {
+                        button(on:click=move |_| game.update(|_| ()), disabled=steps.get() == 0) {
                             "⟲"
                         }
                     }
