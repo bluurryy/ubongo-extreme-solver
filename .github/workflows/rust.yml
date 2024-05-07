@@ -3,6 +3,8 @@ name: Rust
 on: 
   push:
     branches: [ "main" ]
+    paths:
+      - crates/**
   pull_request:
     branches: [ "main" ]
 
