@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - crates/ubongo-extreme-solver-web/**
+  workflow_dispatch:
 
 jobs:
   build-github-pages:
