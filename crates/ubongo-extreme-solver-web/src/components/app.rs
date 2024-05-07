@@ -452,6 +452,11 @@ pub fn App() -> View {
 
     let player = create_signal(player);
 
+    create_effect(move || {
+        let close = close.get();
+        debug!("close changed to: {close}");
+    });
+
     view! {
         svg(id="templates", viewBox="-10 -10 20 20") {
             defs {
@@ -532,7 +537,7 @@ pub fn App() -> View {
                         (solutions_len.get())
                     }
                 }
-                li(class="close-row", on:click=move |_| close.set_fn(|b| !b)) {
+                li(class="close-row", on:click=move |_| close.set(!close.get())) {
                     (if close.get() { "show" } else { "close" })
                 }
             }
