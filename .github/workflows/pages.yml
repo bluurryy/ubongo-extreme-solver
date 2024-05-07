@@ -8,6 +8,9 @@ on:
       - crates/ubongo-extreme-solver-web/**
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build-github-pages:
     runs-on: ubuntu-latest
