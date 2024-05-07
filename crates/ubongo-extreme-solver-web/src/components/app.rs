@@ -348,12 +348,12 @@ pub fn App() -> View {
 
     let examples_keys = create_memo(move || examples.with(|v| v.keys().copied().collect::<Vec<_>>()));
     let example_key = create_signal(String::from("b38y"));
+    let example_value = create_memo(move || {
+        examples.with(|examples| example_key.with(|example_key| examples.get(&**example_key).map(|&v| String::from(v)).unwrap_or_default()))
+    });
     let game_json = create_signal(String::new());
 
-    create_effect(move || {
-        let value = examples.with(|examples| example_key.with(|example_key| examples.get(&**example_key).map(|&v| String::from(v)).unwrap_or_default()));
-        game_json.set(value);
-    });
+    create_effect(move || game_json.set(example_value.get_clone()));
 
     let view = create_signal(false);
     let game = create_signal(Game::default());
@@ -494,7 +494,7 @@ pub fn App() -> View {
                         button(on:click=move |_| view.set(!view.get_untracked())) {
                             (if view.get() { "Hide" } else { "View & Edit" })
                         }
-                        button(on:click=move |_| example_key.update(|_| ())) {
+                        button(on:click=move |_| example_key.update(|_| ()), disabled=example_value.with(|a| game_json.with(|b| a == b)) ) {
                             "⟲"
                         }
                     }
