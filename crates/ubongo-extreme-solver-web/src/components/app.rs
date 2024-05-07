@@ -503,11 +503,6 @@ pub fn App() -> View {
                         attr:class=if view.get() { "" } else { "hidden" },
                     )
                 }
-                Property(label="delay", close=*close) {
-                    div(class="row") {
-                        input(type="number", min="0", bind:valueAsNumber=delay) span { "ms" }
-                    }
-                }
                 Property(label="controls", close=*close) {
                     div(class="row") {
                         button(
@@ -525,6 +520,11 @@ pub fn App() -> View {
                         button(on:click=move |_| game.update(|_| ())) {
                             "⟲"
                         }
+                    }
+                }
+                Property(label="delay", close=*close) {
+                    div(class="row") {
+                        input(type="number", min="0", bind:valueAsNumber=delay) span { "ms" }
                     }
                 }
                 Property(label="steps", close=*close) {
