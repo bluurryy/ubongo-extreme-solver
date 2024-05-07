@@ -492,7 +492,7 @@ pub fn App() -> View {
                             )
                         }
                         button(on:click=move |_| view.set(!view.get_untracked())) {
-                            (if view.get() { "Hide" } else { "View" })
+                            (if view.get() { "Hide" } else { "View & Edit" })
                         }
                         button(on:click=move |_| example_key.update(|_| ())) {
                             "⟲"
