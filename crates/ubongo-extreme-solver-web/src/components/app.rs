@@ -542,17 +542,17 @@ pub fn App() -> View {
                 }
             }
         }
-        div(id="manifest") {
-            (MANIFEST)
+        div(id="version") {
+            (VERSION)
         }
     }
 }
 
 #[cfg(debug_assertions)]
-const MANIFEST: &str = concat!(env!("CARGO_PKG_NAME"), " v", env!("CARGO_PKG_VERSION"), " (debug)");
+const VERSION: &str = concat!("v", env!("CARGO_PKG_VERSION"), " (debug)");
 
 #[cfg(not(debug_assertions))]
-const MANIFEST: &str = concat!(env!("CARGO_PKG_NAME"), " v", env!("CARGO_PKG_VERSION"));
+const VERSION: &str = concat!("v", env!("CARGO_PKG_VERSION"));
 
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub struct AbsoluteGridLayout {
